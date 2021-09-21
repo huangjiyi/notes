@@ -41,7 +41,7 @@ MobileNet-V3引入了几个新组件，进一步改进最终模型
 
 3. 加入 SE Block，且 SE Block 瓶颈大小固定为扩展层通道数的1/4.
 
-   ![image-20210919214520206](mobilenet_v3.assets/image-20210919214520206.png)
+   ![image-20210919214520206](../_image/image-20210919214520206.png)
 
 #### Conclusion
 
