@@ -114,6 +114,8 @@ $$
 
 架构评估详细的实验设置见论文的 Sect. A.2.1 和 Sect. A.2.2。除了 CIFAR-10 和 PTB，本文还分别在 ImageNet (mobile setting) 和 WikiText-2 上评估最佳单元的可迁移性，更多实验细节见论文。
 
+##### Results
+
 ![image-20210923225634981](../_image/image-20210923225634981.png)
 
 ![image-20210923224940910](../_image/image-20210923224940910.png)
