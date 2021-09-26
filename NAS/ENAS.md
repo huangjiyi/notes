@@ -1,6 +1,6 @@
 ### ENAS
 
-**Paper: [Efficient Neural Architecture Search via Parameter Sharing. PMLR, 2018.](http://proceedings.mlr.press/v80/pham18a.html)**
+**Paper: [Efficient Neural Architecture Search via Parameter Sharing. ICML, 2018.](http://proceedings.mlr.press/v80/pham18a.html)**
 
 #### Abstract
 
