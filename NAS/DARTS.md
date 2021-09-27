@@ -10,7 +10,7 @@
 
 现有最好的架构搜索算法在计算上要求很高，尽管它们的性能非常出色。目前已经提出了几种加速的方法，本文从一个不同的角度来处理这个问题，并提出了一种高效的架构搜索方法，称为 DARTS (Differentiable architecture search)。本文方法不是在一组一组离散的候选架构上搜索，而是将搜索空间松弛为连续的，以便可以通过梯度下降来优化架构的验证集性能。
 
-**Code：<https://github.com/quark0/darts>**
+**Code：https://github.com/quark0/darts**
 
 #### 2.  Differentiable Architecture Search
 
@@ -34,7 +34,7 @@ $$
 $$
 \bar{o}^{(i, j)}(x)=\sum_{o \in \mathcal{O}} \frac{\exp \left(\alpha_{o}^{(i, j)}\right)}{\sum_{o^{\prime} \in \mathcal{O}} \exp \left(\alpha_{o^{\prime}}^{(i, j)}\right)} o(x)
 $$
-其中节点对 $(i, j)$ 之间的混合操作权重被参数化为一个维度为 $|\mathcal{O}|$ 的向量 $\alpha^{(i,j)}$，然后架构搜索的任务简化为学习一组连续变量 $\alpha = \{\alpha^{(i,j)}\}$，如下图所示，在搜索结束时，可以通过将每个混合操作 $\bar{o}^{(i, j)}(x)$ 替换为最可能的操作，即 $o^{(i, j)}=arg\,max_{o \in \mathcal{O}} \alpha_{o}^{(i, j)}$. 在后文中，我们称 $\alpha$ 为架构 (的编码)。
+其中节点对 $(i, j)$ 之间的混合操作权重被参数化为一个维度为 $|\mathcal{O}|$ 的向量 $\alpha^{(i,j)}$，然后架构搜索的任务简化为学习一组连续变量 $\alpha = \{\alpha^{(i,j)}\}$，如下图所示，在搜索结束时，可以通过将每个混合操作 $\bar{o}^{(i, j)}(x)$ 替换为最可能的操作，即 $o^{(i, j)}=\operatorname{argmax}_{o \in \mathcal{O}} \alpha_{o}^{(i, j)}$. 在后文中，我们称 $\alpha$ 为架构 (的编码)。
 
 ![image-20210923095341357](../_image/image-20210923095341357.png)
 
@@ -60,7 +60,7 @@ $$
 \approx & \nabla_{\alpha} \mathcal{L}_{v a l}\left(w-\xi \nabla_{w} \mathcal{L}_{t r a i n}(w, \alpha), \alpha\right)
 \end{aligned}
 $$
-其中 $w$ 表示算法当前保持的权重，$\xi$ 表示内部优化的学习率，主要的想法就是用单步训练的 $w$ 估计 $w^{*}(\alpha)$，这样就不需要通过将网络训练至收敛以完全解决内部问题。相关的技术被使用于模型迁移中的元学习、基于梯度的超参数优化，以及 unrolled 生成对抗网络。注意：当 $w$ 已经是局部最优解时，近似方案将会等价于 $\nabla_{\alpha} \mathcal{L}_{v a l}(w,\alpha)$，因为此时 $\nabla_{w} \mathcal{L}_{t r a i n}(w, \alpha)=0$.
+其中 $w$ 表示算法当前保持的权重，$\xi$ 表示内部优化的学习率，主要的想法就是用单步训练的 $w$ 估计 $w^{*}(\alpha)$，这样就不需要通过将网络训练至收敛以完全解决内部问题。相关的技术被使用于模型迁移中的元学习、基于梯度的超参数优化，以及 unrolled 生成对抗网络。注意：当 $w$ 已经是局部最优解时，近似方案将会等价于 $\nabla_{\alpha} \mathcal{L}_{v a l}(w,\alpha)$，因为此时 $\nabla_{w} \mathcal{L}_{t r a i n}(w, \alpha)=0$. 
 
 ![image-20210923105126353](../_image/image-20210923105126353.png)
 
@@ -121,3 +121,4 @@ $$
 ![image-20210923224940910](../_image/image-20210923224940910.png)
 
 ![image-20210923224951734](../_image/image-20210923224951734.png)
+
