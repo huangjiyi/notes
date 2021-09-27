@@ -87,15 +87,14 @@ $$
 
 ##### 3.2. Image Classification on CIFAR-10
 
-**Search spaces:**	1) $macro\ search\ space$：搜索整个卷积模型 (2.3 节)；2) $micro\ search\ space$：只搜索单个卷积单元和下采样单元。
+**Search spaces:** 1) $macro\ search\ space$：搜索整个卷积模型 (2.3 节)；2) $micro\ search\ space$：只搜索单个卷积单元和下采样单元。
 
-**Training  details:**	略
+**Training  details:** 略
 
-**Results:**	下表中第 1 块是当时SOTA的手工设计的网络，第 2 块是 ENAS 和已有的搜索整个网络结构的 NAS 方法，第 3 块是 ENAS 和已有的基于单元的搜索空间的 NAS 方法。第 2 块中 "ENAS + macro search space" 在一块 1080Ti 上花了 7 小时，"+ more channels" 表示扩展网络的宽度。第 3 块中 "ENAS + micro search space" 在一块 1080Ti 上花了 11.5 小时，"+ CutOut" 表示 (DeVries & Taylor, 2017) 中的方法。
+**Results:** 下表中第 1 块是当时SOTA的手工设计的网络，第 2 块是 ENAS 和已有的搜索整个网络结构的 NAS 方法，第 3 块是 ENAS 和已有的基于单元的搜索空间的 NAS 方法。第 2 块中 "ENAS + macro search space" 在一块 1080Ti 上花了 7 小时，"+ more channels" 表示扩展网络的宽度。第 3 块中 "ENAS + micro search space" 在一块 1080Ti 上花了 11.5 小时，"+ CutOut" 表示 (DeVries & Taylor, 2017) 中的方法。
 
 ![image-20210924200354406](../_image/image-20210924200354406.png)
 
 ![image-20210924201358800](../_image/image-20210924201358800.png)
 
 ![image-20210924201418450](../_image/image-20210924201418450.png)
-

@@ -30,12 +30,12 @@
 $$
 \mathcal{N}=\bigodot_{i=1 \ldots s} \mathcal{F}_{i}^{L_{i}}\left(X_{\left\langle H_{i}, W_{i}, C_{i}\right\rangle}\right)
 $$
-其中将网络分为 *s* 个 stage，每个 stage 有 $L_i$ 层，每层有相同的基本模块 $F_i$ (除了下采样层有些不同)，$\mathcal{F}_{i}^{L_{i}}$ 表示在第 *i* 个 stage 模块 $F_i$ 重复了 $L_i$ 次，其输入为 $X_{\left\langle  H_{i}, W_{i}, C_{i}\right\rangle}$ 
+其中将网络分为 *s* 个 stage，每个 stage 有 $L_i$ 层，每层有相同的基本模块 $F_i$ (除了下采样层有些不同)，$\mathcal{F}_{i}^{L_{i}}$ 表示在第 *i* 个 stage 模块 $F_i$ 重复了 $L_i$ 次，其输入为 $X_{\left\langle  H_{i}, W_{i}, C_{i}\right\rangle}$
 
 对于一个 baseline 网络，需要对其进行缩放，模块 $F_i$ 已经固定，需要改变的是模型的深度 $(L_i)$，宽度 $(C_i)$，分辨率 $(H_i, W_i)$，为了降低搜索空间，作者**约束所有层的同一维度以相同比例进行缩放**，最终可以看作一个优化问题：
 $$
 \begin{array}{ll}
-\max _{d, w, r} & \operatorname{Accuracy}(\mathcal{N}(d, w, r)) \\
+\max_{d, w, r} & \operatorname{Accuracy}(\mathcal{N}(d, w, r)) \\
 \text { s.t. } & \mathcal{N}(d, w, r)=\bigodot_{i=1 \ldots s} \hat{\mathcal{F}}_{i}^{d \cdot \hat{L}_{i}}\left(X_{\left\langle r \cdot \hat{H}_{i}, r \cdot \hat{W}_{i}, w \cdot \hat{C}_{i}\right\rangle}\right) \\
 & \operatorname{Memory}(\mathcal{N}) \leq \text { target\_memory } \\
 & \operatorname{FLOPS}(\mathcal{N}) \leq \text { target\_flops }
