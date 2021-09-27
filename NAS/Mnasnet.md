@@ -6,7 +6,7 @@
 
 本文提出了一种自动mobile神经架构搜索 (MNAS) 方法，该方法将模型延迟纳入主要目标，使得搜索可以识别在准确性和延迟之间取得良好折衷的模型。与之前的工作不同，MNAS 通过在手机上执行模型来直接测量现实世界的推理延迟，而不是通过一个通常不准确的代理(例如，FLOPS)，另外，MNAS 中提出了一种新的分层搜索空间。
 
-Code：https://github.com/tensorflow/tpu/tree/master/models/official/mnasnet.
+Code：<https://github.com/tensorflow/tpu/tree/master/models/official/mnasnet>.
 
 #### 1. Introduction
 
@@ -95,4 +95,3 @@ $$
 搜索到的一个代表性模型如下图：
 
 ![image-20210920222114920](../_image/image-20210920222114920.png)
-

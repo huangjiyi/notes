@@ -75,4 +75,3 @@ $$
 #### 4. Experiments and Results
 
 略
-
