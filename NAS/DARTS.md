@@ -46,7 +46,7 @@ $$
 $$
 \begin{matrix}
 \min _{\alpha} & L \\
-\text {s.t.} & w^{*}(\alpha)= \text{argmin}_w 
+\text {s.t.} & w^{*}(\alpha)= \text{argmin}_w\ \mathcal{L}
 \end{matrix}
 $$
 
