@@ -45,8 +45,8 @@ $$
 这是一个双层优化问题，其中 $\alpha$ 作为上层变量，$w$ 作为下层变量。
 $$
 \begin{matrix}
-a & b \\
-c & d
+\min _{\alpha} & b \\
+\text {s.t.} & d
 \end{matrix}
 $$
 
