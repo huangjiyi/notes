@@ -46,14 +46,14 @@ $$
 $$
 \begin{matrix}
 \min _{\alpha} & L \\
-\text {s.t.} & w^{*}(\alpha)
+\text {s.t.} & w^{*}(\alpha)=\operatorname{argmin}_{w} 
 \end{matrix}
 $$
 
 $$
 \begin{matrix}
 \min _{\alpha} & \mathcal{L}_{v a l}(w^{*}(\alpha), \alpha) \\
-\text { s.t. } & w^{*}(\alpha)={argmin}_{w} \mathcal{L}_{train}(w, \alpha)
+\text { s.t. } & w^{*}(\alpha)=\operatorname{argmin}_{w} \mathcal{L}_{train}(w, \alpha)
 \end{matrix}
 $$
 这种嵌套形式也出现在基于梯度的超参数优化中，因此也可以说架构 $\alpha$ 可以看成是一种特殊的超参数，即使它的维度基本上比标量超参数 (比如学习率) 都高，并且更难优化。
