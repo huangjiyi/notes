@@ -46,7 +46,7 @@ $$
 $$
 \begin{matrix}
 \min _{\alpha} & L \\
-\text {s.t.} & d
+\text {s.t.} & w^{*}(\alpha)
 \end{matrix}
 $$
 
