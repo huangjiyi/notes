@@ -45,7 +45,7 @@ $$
 这是一个双层优化问题，其中 $\alpha$ 作为上层变量，$w$ 作为下层变量。
 $$
 \begin{matrix}
-\min _{\alpha} & \mathcal{L} \\
+\min _{\alpha} & L \\
 \text {s.t.} & w^{*}(\alpha)={argmin}_{w} \mathcal{L}_{train}(w, \alpha)
 \end{matrix}
 $$
