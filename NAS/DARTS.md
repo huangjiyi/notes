@@ -45,7 +45,7 @@ $$
 这是一个双层优化问题，其中 $\alpha$ 作为上层变量，$w$ 作为下层变量。
 $$
 \begin{matrix}
-\min _{\alpha} & \mathcal{L}_{val}(w^{*}(\alpha), \alpha) \\
+\min _{\alpha} & \mathcal{L}_{val} \\
 \text {s.t.} & d
 \end{matrix}
 $$
