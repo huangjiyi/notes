@@ -46,7 +46,7 @@ $$
 $$
 \begin{matrix}
 \min _{\alpha} & L \\
-\text {s.t.} & w^{*}(\alpha)={argmin}_{w} \mathcal{L}_{train}(w, \alpha)
+\text {s.t.} & w^{*}(\alpha)
 \end{matrix}
 $$
 
