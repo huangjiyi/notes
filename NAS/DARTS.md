@@ -44,10 +44,10 @@ $$
 
 这是一个双层优化问题，其中 $\alpha$ 作为上层变量，$w$ 作为下层变量。
 $$
-\begin{array} {}
+\begin{matrix}
 \min _{\alpha} & \mathcal{L}_{v a l}\left(w^{*}(\alpha), \alpha\right) \\
 \text { s.t. } & w^{*}(\alpha)=\operatorname{argmin}_{w} \mathcal{L}_{train}(w, \alpha)
-\end{array}
+\end{matrix}
 $$
 这种嵌套形式也出现在基于梯度的超参数优化中，因此也可以说架构 $\alpha$ 可以看成是一种特殊的超参数，即使它的维度基本上比标量超参数 (比如学习率) 都高，并且更难优化。
 
