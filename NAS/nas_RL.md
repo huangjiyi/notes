@@ -75,3 +75,67 @@ $$
 #### 4. Experiments and Results
 
 略
+
+#### Appendix
+
+此处将给出REINFORCE规则的证明：
+
+考虑随机的参数化的策略$\pi_{\theta}$，我们期望更新参数从而获得最大化的期望$J\left(\pi_{\theta}\right)=\underset{\tau \sim \pi_{\theta}}{\mathrm{E}}[R(\tau)]$。为简化证明，以下推导仅考虑有限长度且奖励无衰减（finite-horizon undiscounted return）的情况，虽然这也太理想了...
+
+我们首先考虑策略的更新式$\eqref{update}$，其中 $\nabla_{\theta} J\left(\pi_{\theta}\right)$ 即为策略梯度。REINFORCE算法便是策略梯度算法的一种，不同之处为其仅考虑奖励为执行动作$\alpha_t$后的回报。
+$$
+\tag{1}
+\label{update}
+\theta_{k+1}=\theta_{k}+\left.\alpha \nabla_{\theta} J\left(\pi_{\theta}\right)\right|_{\theta_{k}}
+$$
+
+在给定策略$\pi_\theta$下生成的轨迹$\tau=\left(s_{0}, a_{0}, \ldots, s_{T+1}\right)$的概率为$\eqref{pro}$，若$\eqref{pro}$直接对$\theta$未免显得太过复杂，考虑使用对数函数求导，时我们获得$\eqref{trick}$。
+
+$$
+\tag{2}
+\label{pro}
+P(\tau \mid \theta)=\rho_{0}\left(s_{0}\right) \prod_{t=0}^{T} P\left(s_{t+1} \mid s_{t}, a_{t}\right) \pi_{\theta}\left(a_{t} \mid s_{t}\right)
+$$
+
+$$
+\tag{3}
+\label{trick}
+\begin{aligned}
+\nabla_{\theta} P(\tau \mid \theta)&=P(\tau \mid \theta) \nabla_{\theta} \log P(\tau \mid \theta)\\
+\log P(\tau \mid \theta)&=\log \rho_{0}\left(s_{0}\right)+\sum_{t=0}^{T}\left(\log P\left(s_{t+1} \mid s_{t}, a_{t}\right)+\log \pi_{\theta}\left(a_{t} \mid s_{t}\right)\right)
+\end{aligned}
+$$
+
+注意到环境与策略的参数$\theta$无依赖关系，上式可简化为
+$$
+\tag{4}
+\nabla_{\theta} \log P(\tau \mid \theta)=\sum_{t=0}^{T} \nabla_{\theta} \log \pi_{\theta}\left(a_{t} \mid s_{t}\right)
+$$
+综合上述，我们可以推导出策略梯度式如下
+$$
+\tag{5}
+\begin{aligned}
+\nabla_{\theta} J\left(\pi_{\theta}\right) &=\nabla_{\theta} \underset{\tau \sim \pi_{\theta}}{\mathrm{E}}[R(\tau)] \\
+&=\nabla_{\theta} \int_{\tau} P(\tau \mid \theta) R(\tau) \\
+&=\int_{\tau} \nabla_{\theta} P(\tau \mid \theta) R(\tau) \\
+&=\int_{\tau} P(\tau \mid \theta) \nabla_{\theta} \log P(\tau \mid \theta) R(\tau) \\
+&=\underset{\tau \sim \pi_{\theta}}{\mathrm{E}}\left[\nabla_{\theta} \log P(\tau \mid \theta) R(\tau)\right]
+\end{aligned}
+$$
+最终我们可以得到
+$$
+\tag{6}
+\nabla_{\theta} J\left(\pi_{\theta}\right)=\underset{\tau \sim \pi_{\theta}}{\mathrm{E}}\left[\sum_{t=0}^{T} \nabla_{\theta} \log \pi_{\theta}\left(a_{t} \mid s_{t}\right) R(\tau)\right]
+$$
+对于上式，为简便运算，我们可以利用经验分布估计上式
+$$
+\hat{g}=\frac{1}{|\mathcal{D}|} \sum_{\tau \in \mathcal{D}} \sum_{t=0}^{T} \nabla_{\theta} \log \pi_{\theta}\left(a_{t} \mid s_{t}\right) R(\tau)
+$$
+而REINFORCE算法，则是在奖励函数$R(\tau)=\sum_{t^{\prime}=t}^{\infty} \gamma^{t^{\prime}-t} r_{t^{\prime}}$的情况下，其中$\gamma$为奖励的衰减因子。
+
+
+
+
+
+
+
