@@ -129,6 +129,7 @@ $$
 $$
 对于上式，为简便运算，我们可以利用经验分布估计上式
 $$
+\tag{7}
 \hat{g}=\frac{1}{|\mathcal{D}|} \sum_{\tau \in \mathcal{D}} \sum_{t=0}^{T} \nabla_{\theta} \log \pi_{\theta}\left(a_{t} \mid s_{t}\right) R(\tau)
 $$
 而REINFORCE算法，则是在奖励函数$R(\tau)=\sum_{t^{\prime}=t}^{\infty} \gamma^{t^{\prime}-t} r_{t^{\prime}}$的情况下，其中$\gamma$为奖励的衰减因子。
