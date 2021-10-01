@@ -45,7 +45,7 @@ $$
 g=\operatorname{binarize}\left(p_{1}, \cdots, p_{N}\right)=
 \begin{cases}
 [1,0, \cdots, 0] & \text { with probability } p_{1} \\
-\quad\ \ \ \ \cdots \\
+& \cdots \\
 [0,0, \cdots, 1] & \text { with probability } p_{N} \\
 \end{cases}
 $$
@@ -54,7 +54,7 @@ $$
 m_{\mathcal{O}}^{\text {Binary }}(x)=\sum_{i=1}^{N} g_{i} o_{i}(x)= 
 \begin{cases}
 o_{1}(x) & \text { with probability } p_{1} \\ 
-\ \ \cdots
+& \cdots
 \\ o_{N}(x) & \text { with probability } p_{N}
 \end{cases}
 $$
