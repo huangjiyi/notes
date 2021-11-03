@@ -1,2 +1,2 @@
-## Just for recording study notes
+## Just for recording  paper notes
 
