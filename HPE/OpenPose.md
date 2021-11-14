@@ -1,6 +1,6 @@
 ### OpenPose
 
-**Paper: [OpenPose: Realtime Multi-Person 2D PoseEstimation using Part Affinity Fields](https://arxiv.org/abs/1812.08008)**
+**Paper: [OpenPose: Realtime Multi-Person 2D PoseEstimation using Part Affinity Fields. TPAMI, 2019.](https://arxiv.org/abs/1812.08008)**
 
 #### Abstract
 

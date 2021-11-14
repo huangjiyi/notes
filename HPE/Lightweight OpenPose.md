@@ -1,6 +1,6 @@
 ### Lightweight OpenPose
 
-**Paper: [Real-time 2D Multi-Person Pose Estimation on CPU:Lightweight OpenPose](https://arxiv.org/abs/1811.12004)**
+**Paper: [Real-time 2D Multi-Person Pose Estimation on CPU: Lightweight OpenPose. ArXiv, 2018.](https://arxiv.org/abs/1811.12004)**
 
 #### Abstract
 
